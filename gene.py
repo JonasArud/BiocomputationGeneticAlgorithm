@@ -1,7 +1,12 @@
+#This project has implemented the use of matplotlib to graph the data
+#If it is desired and matplotlib and numpy is intalled, uncommenting the required lines
+#Can be done at line: 8,9, 106 and 209-225
+
+
 
 import random
-import matplotlib.pyplot as plt
-import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
 import math
 
 max, min = 11, 22
@@ -98,7 +103,7 @@ class Population(object):
             self.evolve(rulebase)
             self.gen += 1
             self.report()
-        self.pltData()
+        #self.pltData()
 
     # This loads the datasets into our class Rule.
     # We append the first bit before the space to the condition
@@ -108,8 +113,8 @@ class Population(object):
         for i in range(1, number_of_rules + 1):
             string = rules[i].split(" ")
             condition = list(map(int, list(string[0])))
-            classifictaion = int(string[1][0])
-            rulebase.append(Rule(condition, classifictaion))
+            classification = int(string[1][0])
+            rulebase.append(Rule(condition, classification))
         return rulebase
 
 
@@ -201,22 +206,22 @@ class Population(object):
     # data2 is the best fitness
     # both recorded for each generation
 
-    def pltData(self):
-        data = np.loadtxt('output.txt')
-        data2 = np.loadtxt('output2.txt')
+    #def pltData(self):
+    #    data = np.loadtxt('output.txt')
+    #    data2 = np.loadtxt('output2.txt')
         #plot the first column as x, and second column as y
-        x = data[:, 0]
-        y = data[:, 1]
-        x1 = data2[:, 0]
-        y2 = data2[:, 1]
+    #    x = data[:, 0]
+    #    y = data[:, 1]
+    #    x1 = data2[:, 0]
+    #    y2 = data2[:, 1]
         #(x,y,'ro') plot only points
-        plt.plot(x, y, x1, y2)
-        plt.xlabel('Generation')
-        plt.ylabel('Fitness average')
+    #    plt.plot(x, y, x1, y2)
+    #    plt.xlabel('Generation')
+    #    plt.ylabel('Fitness average')
         #set up max number of generations
-        plt.xlim(0.0,200.)
+    #    plt.xlim(0.0,200.)
         # set up max fitness value
-        plt.ylim(0.0, 70.)
-        plt.show()
+    #    plt.ylim(0.0, 70.)
+    #    plt.show()
 
 
