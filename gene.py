@@ -123,7 +123,7 @@ class Population(object):
     # Crossover
     # And mutation for each individual in the next population
     # Nex step is to carry out fitness calculation - function name: evaluate
-    # And at the end appends the new population to the pool
+    # And at the end appends the new individuals to our population pool
     def evolve(self, rulebase):
         next_population = [self.best.copy_chromosome()]
         total_fitness= 0
